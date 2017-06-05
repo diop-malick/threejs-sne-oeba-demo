@@ -126,7 +126,7 @@ function initTearsModel1() {
     loader.load(
         'js/escalier_v3_part3.json',
         function(geometry, materials) {
-            var material = new THREE.MeshPhongMaterial({ transparent: false, map: THREE.ImageUtils.loadTexture('img/textures/AHORN.jpg') });
+            var material = new THREE.MeshPhongMaterial({ transparent: false, map: THREE.ImageUtils.loadTexture('img/textures/Bois_ExoRouge.jpg') });
             material.side = THREE.DoubleSide;
             tearModel3 = new THREE.Mesh(geometry, material);
             tearModel3.scale.x = tearModel3.scale.y = tearModel3.scale.z = 5;
