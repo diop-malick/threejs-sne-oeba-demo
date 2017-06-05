@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>SNE Configurator</title>
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- STYLE -->
+    <link href="css/main.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="sn-ecommerce.fr">Etude OEBA - Demo Configuteur Escalier</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- =========================================================================================== -->
+    <!-- CONTAINER -->
+    <!-- =========================================================================================== -->
+    <div class="container">
+        <div class="row">
+            <!-- =========================================================================================== -->
+            <!-- FORM -->
+            <!-- =========================================================================================== -->
+            <div class="panel col-sm-3">
+                <div class="form-group panel ">
+                    <div class="row">
+                        <label for="name" class="col-sm-12 control-label">Garde Corps : </label>
+                        <div class="col-sm-12">
+                            <label class="radio-inline">
+                                <input type="radio" onclick="tearModel2.visible = true; tearModel3.visible = true;" id="inlineRadio1" value="option1">Avec
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" onclick="tearModel2.visible = false; tearModel3.visible = false;" id="inlineRadio2" value="option2">Sans
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group panel">
+                    <label>Texture des marches</label>
+                    <div class=" row input-box hv-configurable-box hv-configurable-box-bracelet_material" rel="bracelet_material">
+                        <ul id="texture">
+                            <li rel="9" class="option-8 select"><a href="javascript:void(0);" onclick="doHvSelect(this, 'Bois_Frene.jpg');" title="Bois ExoRouge"><span>Bois ExoRouge</span></a></li>
+                            <li rel="9" class="option-9 disabled"><a href="javascript:void(0);" onclick="doHvSelect(this, 'Bois_ExoRouge.jpg');" title="Bois ExoRouge"><span>Bois ExoRouge</span></a></li>
+                            <li rel="10" class="option-10 disabled">
+                                <a href="javascript:void(0);" onclick="doHvSelect(this, 'Bois_Sapin.jpg');" title="Bois Sapin">
+                                    <span>Bois Sapin</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-group panel">
+                    <label>Couleur Balustres</label>
+                    <div class="row input-box hv-configurable-box hv-configurable-box-bracelet_color" rel="bracelet_color">
+                        <ul>
+                            <li rel="13" class="option-13"><a href="javascript:void(0);" onClick="tearModel2.material[1].color.setHex('0x2f3a4c');" title="Noir"><span>Noir</span></a></li>
+                            <li rel="12" class="option-12"><a href="javascript:void(0);" onClick="tearModel2.material[1].color.setHex('0x5B362A');" title="white"><span>Blanc</span></a></li>
+                            <li rel="14" class="option-14"><a href="javascript:void(0);" onClick="tearModel2.material[1].color.setHex('0x44cc88');" title="Bleu"><span>Bleu</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-group panel">
+                    <label>Couleur Main courante </label>
+                    <div class="row input-box hv-configurable-box hv-configurable-box-bracelet_color" rel="bracelet_color">
+                        <ul>
+                            <li rel="15" class="option-15"><a href="javascript:void(0);" onClick="tearModel3.material.color.setHex('0x4D5B76');" title="bleu"><span>Bleu</span></a></li>
+                            <li rel="16" class="option-16"><a href="javascript:void(0);" onClick="tearModel3.material.color.setHex('0x5B362A');" title="Marron"><span>Marron</span></a></li>
+                            <li rel="17" class="option-17"><a href="javascript:void(0);" onClick="tearModel3.material.color.setHex('0xE9F200');" title="Jaune"><span>Jaune</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                </form>
+            </div>
+            <!-- =========================================================================================== -->
+            <!-- CONFIGURATEUR -->
+            <!-- =========================================================================================== -->
+            <div class="panel col-sm-9">
+                <div id="configurator" width="100%" height="400">
+                </div>
+                <!-- <div id="info" class="panel">
+                </div>
+                <div id="control-gc" class="panel ">
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- =========================================================================================== -->
+    <!-- SCRIPT -->
+    <!-- =========================================================================================== -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- THREE JS -->
+    <!-- <script src="js/three.min.js"></script> -->
+    <script src="https://mrdoob.github.com/three.js/build/three.min.js"></script>
+    <!-- <script src="https://raw.githubusercontent.com/mrdoob/three.js/master/examples/js/controls/OrbitControls.js"></script> -->
+    <script src="js/OrbitControls.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
